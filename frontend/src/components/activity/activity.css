@@ -1,0 +1,42 @@
+.activitycalender{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.activityul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.activitybtn{
+    margin-left: 2rem;
+    padding: 0.2rem 0.4rem;
+}
+
+.spantext{
+    font-size: 1.8rem;
+    color: rgb(255, 192, 75);
+}
+
+.acincontainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+}
+
+.acin{
+    padding: 1rem 1rem;
+    margin: 1rem 1rem;
+    font-size: 1rem;
+}
+
+.acadd{
+    margin-bottom: 2rem;
+    border: 2px solid orange;
+}

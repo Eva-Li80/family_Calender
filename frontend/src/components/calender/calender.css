@@ -1,0 +1,84 @@
+.calendercontainer {
+    background-color: rgb(11, 11, 70);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  .calenderbtn {
+    padding: 0.2rem 0.6rem;
+    margin: 1rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .calendermonth {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 0 1rem;
+  }
+  .calendergrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 5px;
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem 1rem 1rem 1rem;
+    border-radius: 5px;
+    overflow-x: auto; /
+  }
+  
+  .calenderday {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    background-color: transparent;
+    font-size: 1rem;
+    min-width: 0; 
+  }
+  .calenderday.selected {
+    background-color: blue !important;
+    color: white;
+  }
+  
+  
+  .calenderday.green {
+    background-color: green;
+    color: white;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .calenderday {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .calenderbtn {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.6rem;
+    }
+  
+    .calendermonth {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .calenderday {
+      font-size: 0.8rem;
+      padding: 6px;
+    }
+  
+    .calendermonth {
+      font-size: 1.3rem;
+    }
+  
+    .calendercontainer {
+      padding: 0.5rem;
+    }
+  }
+  
