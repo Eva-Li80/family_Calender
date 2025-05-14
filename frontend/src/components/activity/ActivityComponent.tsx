@@ -84,7 +84,7 @@ export const ActivityComponent: React.FC<ActivityComponentProps> = ({
         {activities.map((activity) => (
           <li className="activityli" key={activity.id}>
             <span className="spantext">
-              {activity.name} - {activity.time}
+              {activity.name} - Kl: {activity.time}
             </span>
             <button
               className="activitybtn"

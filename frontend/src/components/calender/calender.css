@@ -6,13 +6,24 @@
     box-sizing: border-box;
     width: 100%;
   }
+
+  h2{
+    background: linear-gradient(to right,  rgb(11, 11, 70), rgb(104, 128, 144),  rgb(11, 11, 70));
+    margin: 0.5rem 1rem 1rem 1rem;
+    border: 1px solid rgb(191, 142, 8);
+    border-radius: 5px;
+    padding: 0.1rem 0;
+  }
   
   .calenderbtn {
     padding: 0.2rem 0.6rem;
     margin: 1rem 1rem;
     font-size: 1rem;
+    border: 1px solid rgb(254, 254, 254);
+    background: linear-gradient(to right,  rgb(11, 11, 70), rgb(23, 54, 75),  rgb(11, 11, 70));
+    color: white;
   }
-  
+
   .calendermonth {
     font-size: 1rem;
     display: inline-block;

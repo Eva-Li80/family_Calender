@@ -15,28 +15,32 @@
 
 .activitybtn{
     margin-left: 2rem;
-    padding: 0.2rem 0.4rem;
+    padding: 0.1rem 0.4rem;
+    border: 1px solid orange;
 }
 
 .spantext{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: rgb(255, 192, 75);
 }
 
 .acincontainer{
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
 }
 
 .acin{
-    padding: 1rem 1rem;
+    padding: 0.6rem 1rem;
     margin: 1rem 1rem;
     font-size: 1rem;
+    color: orange;
 }
 
 .acadd{
     margin-bottom: 2rem;
     border: 2px solid orange;
+    background: linear-gradient(to right,  rgb(11, 11, 70), rgb(40, 86, 118),  rgb(11, 11, 70));
+    color: white;
 }
