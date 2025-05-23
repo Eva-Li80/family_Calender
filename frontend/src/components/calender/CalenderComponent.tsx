@@ -69,7 +69,7 @@ const CalendarComponent: React.FC = () => {
           bakåt
         </button>
         <span className="calendermonth">
-          {date.toLocaleString("sv-SE", { month: "long", year: "numeric" })}
+          {date.toLocaleString("sv-SE", { month: "long"})}
         </span>
         <button className="calenderbtn" onClick={() => changeMonth("next")}>
           framåt
