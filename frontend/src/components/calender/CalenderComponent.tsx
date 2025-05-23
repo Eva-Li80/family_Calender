@@ -77,7 +77,7 @@ const CalendarComponent: React.FC = () => {
       </div>
 
       <div className="calendergrid">
-        {["Må", "Ti", "On", "Tor", "Fr", "Lö", "Sö"].map((day) => (
+        {["M", "Ti", "O", "To", "F", "L", "S"].map((day) => (
           <div key={day} className="calenderday header" style={{color: "black"}}>
             {day}
           </div>

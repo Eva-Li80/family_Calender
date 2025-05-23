@@ -105,6 +105,7 @@ export const ActivityComponent: React.FC<ActivityComponentProps> = ({
           placeholder="Lägg till aktivitet"
         />
         <input
+          placeholder="Lägg till tid"
           className="acin"
           type="time"
           value={time}
