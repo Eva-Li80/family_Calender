@@ -112,7 +112,7 @@ export const ActivityComponent: React.FC<ActivityComponentProps> = ({
         />
       </div>
       <button className="acadd" onClick={handleAddActivity}>
-        Lägg till aktivitet
+        Spara aktivitet
       </button>
     </div>
   );

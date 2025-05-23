@@ -10,12 +10,13 @@ const CalendarComponent: React.FC = () => {
   const [greenDays, setGreenDays] = useState<Set<string>>(new Set());
 
   const fetchActivitiesForMonth = async () => {
-    const start = new Date(date.getFullYear(), date.getMonth(), 1);
-    const end = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const end = new Date(year, month + 1, 0);
     const daysWithActivities = new Set<string>();
 
-    for (let d = start.getDate(); d <= end.getDate(); d++) {
-      const dayStr = `${date.getFullYear()}-${date.getMonth() + 1}-${d}`;
+    for (let d = 1; d <= end.getDate(); d++) {
+      const dayStr = `${year}-${month + 1}-${d}`;
       const q = query(collection(db, "activities"), where("date", "==", dayStr));
       const snapshot = await getDocs(q);
       if (!snapshot.empty) {
@@ -38,12 +39,23 @@ const CalendarComponent: React.FC = () => {
   }, [date]);
 
   const generateDaysInMonth = () => {
-    const start = new Date(date.getFullYear(), date.getMonth(), 1);
-    const end = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-    const days: string[] = [];
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const firstDay = new Date(year, month, 1);
+    const end = new Date(year, month + 1, 0);
+    const days: (string | null)[] = [];
 
-    for (let d = start.getDate(); d <= end.getDate(); d++) {
-      days.push(`${date.getFullYear()}-${date.getMonth() + 1}-${d}`);
+    let weekday = firstDay.getDay();
+    if (weekday === 0) weekday = 7; // söndag → 7
+
+    // Lägg till tomma celler innan månadens första dag
+    for (let i = 1; i < weekday; i++) {
+      days.push(null);
+    }
+
+    // Lägg till riktiga datum
+    for (let d = 1; d <= end.getDate(); d++) {
+      days.push(`${year}-${month + 1}-${d}`);
     }
 
     return days;
@@ -65,16 +77,30 @@ const CalendarComponent: React.FC = () => {
       </div>
 
       <div className="calendergrid">
-        {generateDaysInMonth().map((day) => {
+        {["Må", "Ti", "On", "Tor", "Fr", "Lö", "Sö"].map((day) => (
+          <div key={day} className="calenderday header" style={{color: "black"}}>
+            {day}
+          </div>
+        ))}
+
+        {generateDaysInMonth().map((day, index) => {
+          if (day === null) {
+            return <div key={`empty-${index}`} className="calenderday empty"></div>;
+          }
+
           const isGreen = greenDays.has(day);
           const isSelected = selectedDay === day;
+          const dateParts = day.split("-");
+          const formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+
           return (
             <div
               key={day}
+              title={`Aktiviteter för ${formattedDate}`}
               onClick={() => setSelectedDay(day)}
               className={`calenderday ${isGreen ? "green" : ""} ${isSelected ? "selected" : ""}`}
             >
-              {day.split("-")[2]}
+              {dateParts[2]}
             </div>
           );
         })}

@@ -1,46 +1,92 @@
-.activitycalender{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.activityul{
+.activitycalender {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+  
+  .activityul {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     list-style-type: none;
-}
-
-.activitybtn{
-    margin-left: 2rem;
-    padding: 0.1rem 0.4rem;
-    border: 1px solid orange;
-}
-
-.spantext{
-    font-size: 1.6rem;
-    color: rgb(255, 192, 75);
-}
-
-.acincontainer{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .activityli {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.4rem;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  .spantext {
+    flex: 1 1 60%;
+    padding: 0.4rem;
+    background: linear-gradient(to right, rgb(11, 11, 70), rgb(89, 110, 124), rgb(11, 11, 70));
+    color: rgb(255, 207, 160);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 6px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    word-break: break-word;
+    white-space: normal;
+    text-align: center;
+  }
+  
+  
+  .activitybtn {
+    flex-shrink: 0;
+    padding: 0.2rem 0.6rem;;
+    font-size: 1.2rem;
+    background: linear-gradient(to right, rgb(11, 11, 70), rgb(59, 85, 102), rgb(11, 11, 70));
+    color: orange;
+    border: 1px solid rgb(250, 243, 231);
+    border-radius: 6px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .acincontainer {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
-
-}
-
-.acin{
+    width: 100%;
+    max-width: 400px;
+    align-items: center;
+  }
+  
+  .acin {
     padding: 0.6rem 1rem;
-    margin: 1rem 1rem;
+    margin: 0.5rem;
     font-size: 1rem;
     color: orange;
-}
-
-.acadd{
+    width: 90%;
+    max-width: 300px;
+    box-sizing: border-box;
+  }
+  
+  .acadd {
     margin-bottom: 2rem;
     border: 2px solid orange;
-    background: linear-gradient(to right,  rgb(11, 11, 70), rgb(40, 86, 118),  rgb(11, 11, 70));
+    background: linear-gradient(to right, rgb(11, 11, 70), rgb(40, 86, 118), rgb(11, 11, 70));
     color: white;
-}
+    padding: 0.6rem 1.2rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+  }
+  
