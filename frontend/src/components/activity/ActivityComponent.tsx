@@ -30,6 +30,18 @@ export const ActivityComponent: React.FC<ActivityComponentProps> = ({
   const [activity, setActivity] = useState<string>("");
   const [time, setTime] = useState<string>("");
 
+  const formatDate = (dateString: string): string => {
+    const months = [
+      "januari", "februari", "mars", "april", "maj", "juni",
+      "juli", "augusti", "september", "oktober", "november", "december"
+    ];
+  
+    const [year, month, day] = dateString.split("-");
+    const monthName = months[parseInt(month) - 1];
+    return `${parseInt(day)} ${monthName} ${year}`;
+  };
+  
+
   const fetchActivities = async () => {
     const q = query(
       collection(db, "activities"),
@@ -79,7 +91,7 @@ export const ActivityComponent: React.FC<ActivityComponentProps> = ({
 
   return (
     <div className="activitycontainer">
-      <h3>Aktiviteter för {selectedDay}</h3>
+      <h3>{formatDate(selectedDay)}</h3>
       <ul className="activityul">
         {activities.map((activity) => (
           <li className="activityli" key={activity.id}>
